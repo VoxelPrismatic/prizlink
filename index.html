@@ -1,1 +1,10 @@
 <html>
+ <head>
+  <script>
+   var meta = document.createElement("META");
+   meta.httpEquiv = "Refresh";
+   meta.content = ".1; url="+document.atob((document.URL+"").split("?url=")[1]);
+   document.body.appendChild(meta);   
+  </script>
+ </head>
+</html>
