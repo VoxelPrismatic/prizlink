@@ -2,10 +2,14 @@
  <body style="color: #fff; background-color: #122; font-family: monospace;">
   <script>
    document.write("REDIRECTING");
-   var meta = document.createElement("META");
-   meta.httpEquiv = "Refresh";
-   meta.content = ".1; url="+document.atob((document.URL+"").split("?url=")[1]);
-   document.body.appendChild(meta);   
+   try {
+    var meta = document.createElement("META");
+    meta.httpEquiv = "Refresh";
+    meta.content = ".1; url="+document.atob((document.URL+"").split("?url=")[1]);
+    document.body.appendChild(meta);   
+   } catch(err) {
+    document.write(err.message);
+   }
   </script>
  </head>
 </html>
