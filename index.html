@@ -1,11 +1,13 @@
 <html>
  <body style="color: #fff; background-color: #122; font-family: monospace;">
+  <div>REDIRECTING<br><a id="url" href="about:blank">[LINK]</a><br></div>
   <script>
-   document.write("REDIRECTING <br >");
    try {
+    var url = window.atob((document.URL+"").split("?url=")[1]);
+    document.getElementById("url").href = url;
     var meta = document.createElement("META");
     meta.httpEquiv = "Refresh";
-    meta.content = ".1; url="+window.atob((document.URL+"").split("?url=")[1]);
+    meta.content = ".1; url="+url;
     document.body.appendChild(meta);   
    } catch(err) {
     document.write(err.message);
