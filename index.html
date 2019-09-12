@@ -1,14 +1,20 @@
 <html>
  <body style="color: #fff; background-color: #122; font-family: monospace;">
-  <div>REDIRECTING<br><a id="url" href="about:blank" style="color: #ff00ff">[LINK]</a><br></div>
+  <div>JUST A SEC<br><a id="url" href="about:blank" style="color: #ff00ff">[LINK]</a><br></div>
   <script>
    try {
-    var url = window.atob((document.URL+"").split("?url=")[1]);
-    document.getElementById("url").href = url;
-    var meta = document.createElement("META");
-    meta.httpEquiv = "Refresh";
-    meta.content = ".1; url="+url;
-    document.body.appendChild(meta);   
+    try { 
+     var url = window.atob((document.URL+"").split("?url=")[1]);
+     document.write('REDIRECTING... CLICK LINK ABOVE');
+     document.getElementById("url").href = url;
+     var meta = document.createElement("META");
+     meta.httpEquiv = "Refresh";
+     meta.content = ".1; url="+url;
+     document.body.appendChild(meta);   
+    } catch(err) {
+     var url = window.btoa((document.URL+"").split("?gen=")[1]);
+     document.write('GENERATED... CLICK LINK ABOVE');
+    }
    } catch(err) {
     document.write(err.message);
    }
