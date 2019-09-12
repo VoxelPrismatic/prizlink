@@ -5,13 +5,14 @@
    try {
     try { 
      var url = window.atob((document.URL+"").split("?url=")[1]);
-     document.write('REDIRECTING... CLICK LINK ABOVE');
      document.getElementById("url").href = url;
+     document.write('REDIRECTING... CLICK LINK ABOVE');
      var meta = document.createElement("META");
      meta.httpEquiv = "Refresh"; meta.content = ".1; url="+url;
      document.body.appendChild(meta);   
     } catch(err) {
      var url = window.btoa((document.URL+"").split("?gen=")[1]);
+     document.getElementById("url").href = url;
      document.write('GENERATED... CLICK LINK ABOVE');
     }
    } catch(err) {
