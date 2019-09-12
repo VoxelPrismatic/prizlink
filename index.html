@@ -12,7 +12,7 @@
      document.body.appendChild(meta);   
     } catch(err) {
      var url = window.btoa((document.URL+"").split("?gen=")[1]);
-     document.getElementById("url").href = url;
+     document.getElementById("url").href = "https://voxelprismatic.github.io/prizlink/?url="+url;
      document.write('GENERATED... CLICK LINK ABOVE');
     }
    } catch(err) {
